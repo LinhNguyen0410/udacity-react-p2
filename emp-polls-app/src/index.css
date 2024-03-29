@@ -2,3 +2,11 @@ input.Mui-disabled {
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
 }
+
+header {
+  background-color: #679d5a !important;
+}
+
+button {
+  background-color: #679d5a !important;
+}
