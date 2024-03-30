@@ -6,11 +6,11 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="MuiBox-root css-12fpphp"
+        class="MuiBox-root css-0"
+        style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: rgb(156, 39, 176);"
       >
         <h1
           class="MuiTypography-root MuiTypography-h1 css-o2w69a-MuiTypography-root"
-          style="color: white;"
         >
           404 Not Found
         </h1>
@@ -19,11 +19,11 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="MuiBox-root css-12fpphp"
+      class="MuiBox-root css-0"
+      style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: rgb(156, 39, 176);"
     >
       <h1
         class="MuiTypography-root MuiTypography-h1 css-o2w69a-MuiTypography-root"
-        style="color: white;"
       >
         404 Not Found
       </h1>

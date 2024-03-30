@@ -22,7 +22,6 @@ const Login = ({ redirectTo }) => {
   const [alertDisplayed, setAlertDisplayed] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const doesAnyHistoryEntryExist = location.key !== "default";
 
   const currentlyLoggedInUser = useSelector(selectAuthUser);
 
@@ -50,15 +49,8 @@ const Login = ({ redirectTo }) => {
 
     const timer = setTimeout(() => {
       clearInterval(timer);
-      if (redirectTo && redirectTo.length > 0) {
-        navigate(redirectTo, { state: { previousPath: location.pathname } });
-        return;
-      } else if (doesAnyHistoryEntryExist) {
-        const shouldGoToHome = location.state && location.state.previousPath && location.state.previousPath === "/404";
-        shouldGoToHome ? navigate("/home", { state: { previousPath: location.pathname } }) : navigate(-1);
-      } else {
-        navigate("/home", { state: { previousPath: location.pathname } });
-      }
+
+      navigate("/home", { state: { previousPath: location.pathname } });
     }, 100);
   };
 
@@ -75,11 +67,7 @@ const Login = ({ redirectTo }) => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {currentlyLoggedInUser === null
-            ? redirectTo && redirectTo.length > 0
-              ? "Please Sign in first"
-              : "Sign in"
-            : "Switch User"}
+          {currentlyLoggedInUser === null ? "Sign in" : "Switch User"}
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <FormControl style={{ width: "500px" }}>

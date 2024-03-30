@@ -38,7 +38,7 @@ const QuestionDetails = () => {
 
   const Details = () => {
     if (!isAllowed) {
-      return <Login redirectTo={location.pathname} />;
+      return <Login />;
     } else if (questionNotFound) {
       return <Navigate to={"/404"} state={{ previousPath: location.pathname }} />;
     } else {
